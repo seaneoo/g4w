@@ -45,14 +45,9 @@ module.exports = {
         use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"],
       },
       {
-        test: /\.(jpe?g|png|svg)$/,
+        test: /\.svg$/,
         exclude: [/node_modules/],
-        use: {
-          loader: "file-loader",
-          options: {
-            publicPath: "/",
-          },
-        },
+        use: ["@svgr/webpack", "url-loader"],
       },
     ],
   },
