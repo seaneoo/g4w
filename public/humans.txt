@@ -1,3 +1,13 @@
-Sean O'Connor
-so@seano.dev
-https://seano.dev/
+CREATIVE:
+    Ryan
+    ryan@gamers4war.com
+    @ssjryoo via Twitter
+
+DEVELOPMENT:
+    Sean O'Connor
+    so@seano.dev
+    https://seano.dev/
+
+GRAPHICS:
+    (logo) Ted
+    @IneRoyal_ via Twitter
