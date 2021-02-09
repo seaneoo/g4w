@@ -1,0 +1,10 @@
+{
+  "name": "Gamers4War",
+  "short_name": "G4W",
+  "description": "Gamers4War.com",
+  "start_url": ".",
+  "icons": [
+    { "src": "g4w@192.png", "type": "image/png", "sizes": "192x192" },
+    { "src": "g4w@512.png", "type": "image/png", "sizes": "512x512" }
+  ]
+}
