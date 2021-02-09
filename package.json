@@ -1,0 +1,44 @@
+{
+  "private": true,
+  "name": "g4w",
+  "version": "1.0.0",
+  "description": "Gamers4War.com",
+  "contributors": [
+    {
+      "name": "Sean O'Connor",
+      "email": "so@seano.dev",
+      "url": "https://seano.dev/"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://www.gamers4war.com/",
+  "scripts": {
+    "dev:start": "webpack serve --mode=development",
+    "prod:build": "webpack --mode=production",
+    "prod:start": "webpack serve --mode=production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "@babel/runtime": "^7.12.13",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.12.13",
+    "@babel/plugin-transform-runtime": "^7.12.15",
+    "@babel/preset-env": "^7.12.13",
+    "@babel/preset-react": "^7.12.13",
+    "@babel/preset-typescript": "^7.12.13",
+    "@types/react": "^17.0.1",
+    "@types/react-dom": "^17.0.0",
+    "babel-loader": "^8.2.2",
+    "copy-webpack-plugin": "^7.0.0",
+    "file-loader": "^6.2.0",
+    "html-webpack-plugin": "^5.0.0",
+    "terser-webpack-plugin": "^5.1.1",
+    "typescript": "^4.1.3",
+    "webpack": "^5.21.2",
+    "webpack-cli": "^4.5.0",
+    "webpack-dev-server": "^3.11.2"
+  }
+}
