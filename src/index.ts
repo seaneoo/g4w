@@ -1,7 +1,6 @@
 import React from "react";
-import ReactDOM from "react-dom";
+import { render } from "react-dom";
+import App from "./components/App";
+import "./sass/main.scss";
 
-ReactDOM.render(
-  React.createElement("h1", {}, "Hello, World!"),
-  document.getElementById("root")
-);
+render(React.createElement(App), document.getElementById("root"));
