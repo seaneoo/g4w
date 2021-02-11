@@ -14,11 +14,7 @@ module.exports = {
     path: dist,
   },
   optimization: {
-    minimizer: [
-      new TerserPlugin({
-        /* additional options here */
-      }),
-    ],
+    minimizer: [new TerserPlugin()],
   },
   devServer: {
     contentBase: dist,
@@ -27,6 +23,9 @@ module.exports = {
   },
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"],
+    alias: {
+      "~": path.resolve(__dirname, "src/"),
+    },
   },
   module: {
     rules: [
