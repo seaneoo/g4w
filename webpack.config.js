@@ -1,19 +1,25 @@
 const path = require("path");
 const dist = path.resolve(__dirname, "dist");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const CopyWebpackPlugin = require("copy-webpack-plugin");
-const TerserWebpackPlugin = require("terser-webpack-plugin");
+
+// Webpack Plugins
+const TerserPlugin = require("terser-webpack-plugin");
+const HtmlPlugin = require("html-webpack-plugin");
+const CopyPlugin = require("copy-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
 
 module.exports = {
   entry: path.resolve(__dirname, "src/index.ts"),
   output: {
-    filename: "g4w.min.js",
+    filename: "bundle.min.js",
     path: dist,
   },
-  optimization: { minimize: true, minimizer: [new TerserWebpackPlugin()] },
-  // Dev Only
-  devtool: "inline-source-map",
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        /* additional options here */
+      }),
+    ],
+  },
   devServer: {
     contentBase: dist,
     compress: true,
@@ -52,12 +58,13 @@ module.exports = {
     ],
   },
   plugins: [
-    new HtmlWebpackPlugin({
+    new HtmlPlugin({
       template: path.resolve(__dirname, "public/index.html"),
       hash: true,
       scriptLoading: "defer",
     }),
-    new CopyWebpackPlugin({
+    new MiniCssExtractPlugin(),
+    new CopyPlugin({
       patterns: [
         {
           from: "public",
@@ -67,6 +74,5 @@ module.exports = {
         },
       ],
     }),
-    new MiniCssExtractPlugin(),
   ],
 };
