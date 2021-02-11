@@ -1,6 +1,5 @@
 import React from "react";
 import { render } from "react-dom";
-import App from "./components/App";
-import "./sass/main.scss";
+import App from "~/containers/App";
 
 render(React.createElement(App), document.getElementById("root"));
