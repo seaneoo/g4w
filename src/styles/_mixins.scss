@@ -1,0 +1,35 @@
+@mixin border-radius($r) {
+  border-radius: $r;
+  background-clip: padding-box;
+}
+
+@mixin box($w, $h: $w) {
+  width: $w;
+  height: $h;
+}
+
+@mixin clearfix {
+  &::after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+@mixin center {
+  display: grid;
+  place-content: center;
+}
+
+@mixin absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin reset-ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

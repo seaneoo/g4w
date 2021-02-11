@@ -1,0 +1,17 @@
+*,
+*::after,
+*::before {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 75%;
+}
+
+body {
+  margin: 0;
+  background-color: $black;
+  font-family: $sans-serif;
+  font-size: 100%;
+  color: $text;
+}

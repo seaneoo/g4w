@@ -1,0 +1,65 @@
+header {
+  padding: 2rem 0;
+  background-color: $black;
+
+  & .header-in {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 2rem;
+    width: 65%;
+    margin: 0 auto;
+  }
+}
+
+header .brand {
+  @include box(auto, 64px);
+
+  a,
+  a img {
+    @include box(inherit);
+  }
+}
+
+.navbar {
+  display: flex;
+  width: 100%;
+
+  ul.nav-links {
+    height: 100%;
+    display: flex;
+    flex: 1;
+    justify-content: flex-start;
+    place-items: center;
+    @include reset-ul;
+
+    &.-right {
+      flex: 0;
+      justify-content: flex-end;
+
+      li.nav-item:not(:last-child) {
+        margin: 0;
+      }
+
+      li.nav-item:not(:first-child) {
+        margin-left: 2rem;
+      }
+    }
+
+    li.nav-item {
+      &:not(:last-child) {
+        margin-right: 2rem;
+      }
+
+      a {
+        color: $white;
+        font-size: 1.25rem;
+        text-transform: uppercase;
+
+        svg {
+          display: inline-block;
+          vertical-align: middle;
+        }
+      }
+    }
+  }
+}
