@@ -13,11 +13,10 @@ const App = () => {
   });
 
   const handleScroll = () => {
-    if (scrollY >= 0 && !document.body.classList.contains("scrolled")) {
+    if (scrollY > 0 && !document.body.classList.contains("scrolled"))
       document.body.classList.add("scrolled");
-    } else if (scrollY == 0 && document.body.classList.contains("scrolled")) {
+    else if (scrollY === 0 && document.body.classList.contains("scrolled"))
       document.body.classList.remove("scrolled");
-    }
   };
 
   return (
@@ -25,11 +24,11 @@ const App = () => {
       <div className="container">
         <Header />
 
-      <main>
-        <Switch>
-          <Route path="/">{/* */}</Route>
-        </Switch>
-      </main>
+        <main>
+          <Switch>
+            <Route path="/">{/* */}</Route>
+          </Switch>
+        </main>
       </div>
     </Router>
   );

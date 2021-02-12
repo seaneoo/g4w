@@ -1,24 +1,30 @@
+$padding: 2rem;
+$height: 8rem;
+
 header {
   position: relative;
-  top: 2rem;
+  top: $padding;
+  height: $height;
+  margin-bottom: $padding;
   transition: all 200ms ease;
 
-  & .header-in {
+  .header-in {
+    position: relative;
     display: grid;
+    height: inherit;
     grid-template-columns: 1fr auto 1fr;
-    gap: 1rem;
-    width: 85%;
+    gap: $padding;
     margin: 0 auto;
   }
 }
 
 header .brand {
-  @include box(auto, 96px);
+  @include box(auto, inherit);
   order: 2;
 
   a,
   a img {
-    @include box(inherit);
+    @include box(auto, inherit);
   }
 }
 
@@ -58,8 +64,6 @@ ul.nav-links {
 
     a {
       font-size: 1.25rem;
-      font-weight: 700;
-      text-transform: uppercase;
 
       svg {
         display: inline-block;
@@ -76,11 +80,13 @@ ul.nav-links {
 body.scrolled header {
   position: fixed;
   @include pos($top: 0, $right: 0, $bottom: auto, $left: 0);
-  padding: 0.5rem;
+  height: $height / 1.5;
   background-color: $white;
-  box-shadow: 0 0.2rem 0.35rem 0 rgba($color: $black, $alpha: 0.25);
+  z-index: 9999;
 
-  .brand {
-    @include box(auto, 64px);
+  .header-in {
+    @include responsive-max-width;
+    height: inherit;
+    // Properly add padding or a margin somewhere in here
   }
 }

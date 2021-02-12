@@ -1,12 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { Twitter, ShoppingCart } from "react-feather";
 import logo from "~/assets/logos/ball@1x.svg";
-
-/**
- * Header layout:
- * | NAV | BRAND | XTRA |
- */
 
 const Header = () => {
   return (
@@ -45,12 +39,12 @@ const Header = () => {
                 rel="noopener noreferrer"
                 aria-label="twitter"
               >
-                <Twitter />
+                Twitter
               </a>
             </li>
             <li className="nav-item">
               <a href="/" aria-label="store">
-                <ShoppingCart />
+                Store
               </a>
             </li>
           </ul>
