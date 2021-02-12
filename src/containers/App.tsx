@@ -22,13 +22,15 @@ const App = () => {
 
   return (
     <Router>
-      <Header></Header>
+      <div className="container">
+        <Header />
 
       <main>
         <Switch>
           <Route path="/">{/* */}</Route>
         </Switch>
       </main>
+      </div>
     </Router>
   );
 };

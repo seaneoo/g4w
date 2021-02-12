@@ -7,6 +7,29 @@
     @error "No value for '#{$key}' exists. Available breakpoints are: #{map-keys($map: $breakpoints)}";
   }
 }
+@mixin responsive-max-width {
+  max-width: 100%;
+
+  @include media-breakpoint-up("sm") {
+    max-width: 540px;
+  }
+
+  @include media-breakpoint-up("md") {
+    max-width: 720px;
+  }
+
+  @include media-breakpoint-up("lg") {
+    max-width: 960px;
+  }
+
+  @include media-breakpoint-up("xl") {
+    max-width: 1140px;
+  }
+
+  @include media-breakpoint-up("xxl") {
+    max-width: 1320px;
+  }
+}
 @mixin pos($top: auto, $right: $top, $bottom: $top, $left: $right) {
   top: $top;
   right: $right;
