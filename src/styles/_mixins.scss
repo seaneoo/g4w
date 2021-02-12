@@ -1,3 +1,12 @@
+@mixin media-breakpoint-up($key: "xs") {
+  @if map-has-key($map: $breakpoints, $key: $key) {
+    @media (min-width: map-get($map: $breakpoints, $key: $key)) {
+      @content;
+    }
+  } @else {
+    @error "No value for '#{$key}' exists. Available breakpoints are: #{map-keys($map: $breakpoints)}";
+  }
+}
 @mixin pos($top: auto, $right: $top, $bottom: $top, $left: $right) {
   top: $top;
   right: $right;
