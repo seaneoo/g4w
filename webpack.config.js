@@ -12,6 +12,7 @@ module.exports = {
   output: {
     filename: "bundle.min.js",
     path: dist,
+    publicPath: "",
   },
   optimization: {
     minimizer: [new TerserPlugin()],
@@ -53,6 +54,18 @@ module.exports = {
         test: /\.svg$/,
         exclude: [/node_modules/],
         use: ["@svgr/webpack", "url-loader"],
+      },
+      {
+        test: /\.(png|jpe?g)$/,
+        exclude: [/node_modules/],
+        use: [
+          {
+            loader: "file-loader",
+            options: {
+              name: "static/[hash].[ext]",
+            },
+          },
+        ],
       },
     ],
   },
