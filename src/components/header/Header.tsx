@@ -5,7 +5,7 @@ import logo from "~/assets/logos/ball@1x.svg";
 const Header = () => {
   return (
     <header id="header">
-      <div className="header-in">
+      <div className="header-in container">
         {/* Branding */}
         <div className="brand">
           <Link to="/">
