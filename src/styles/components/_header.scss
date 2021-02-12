@@ -1,18 +1,19 @@
 header {
-  padding: 2rem 0;
-  background-color: $black;
+  position: relative;
+  top: 2rem;
 
   & .header-in {
     display: grid;
-    grid-template-columns: auto 1fr;
-    gap: 2rem;
-    width: 65%;
+    grid-template-columns: 1fr auto 1fr;
+    gap: 1rem;
+    width: 85%;
     margin: 0 auto;
   }
 }
 
 header .brand {
-  @include box(auto, 64px);
+  @include box(auto, 96px);
+  order: 2;
 
   a,
   a img {
@@ -20,45 +21,48 @@ header .brand {
   }
 }
 
-.navbar {
+header .navbar {
+  order: 1;
+}
+
+header .x-navbar {
+  order: 3;
+}
+
+ul.nav-links {
+  height: 100%;
   display: flex;
-  width: 100%;
+  flex: 1;
+  justify-content: flex-start;
+  place-items: center;
+  @include reset-ul;
 
-  ul.nav-links {
-    height: 100%;
-    display: flex;
-    flex: 1;
-    justify-content: flex-start;
-    place-items: center;
-    @include reset-ul;
+  &.--justify-right {
+    flex: 0;
+    justify-content: flex-end;
 
-    &.-right {
-      flex: 0;
-      justify-content: flex-end;
-
-      li.nav-item:not(:last-child) {
-        margin: 0;
-      }
-
-      li.nav-item:not(:first-child) {
-        margin-left: 2rem;
-      }
+    li.nav-item:not(:last-child) {
+      margin: 0;
     }
 
-    li.nav-item {
-      &:not(:last-child) {
-        margin-right: 2rem;
-      }
+    li.nav-item:not(:first-child) {
+      margin-left: 2rem;
+    }
+  }
 
-      a {
-        color: $white;
-        font-size: 1.25rem;
-        text-transform: uppercase;
+  li.nav-item {
+    &:not(:last-child) {
+      margin-right: 2rem;
+    }
 
-        svg {
-          display: inline-block;
-          vertical-align: middle;
-        }
+    a {
+      font-size: 1.25rem;
+      font-weight: 700;
+      text-transform: uppercase;
+
+      svg {
+        display: inline-block;
+        vertical-align: middle;
       }
     }
   }
