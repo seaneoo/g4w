@@ -2,6 +2,7 @@ import React, { useEffect } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Header } from "~/components/header";
 import "~/styles/index.scss";
+import { Home } from "./pages";
 
 const App = () => {
   useEffect(() => {
@@ -21,15 +22,15 @@ const App = () => {
 
   return (
     <Router>
-      <div className="container">
-        <Header />
+      <Header />
 
-        <main>
-          <Switch>
-            <Route path="/">{/* */}</Route>
-          </Switch>
-        </main>
-      </div>
+      <main>
+        <Switch>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </main>
     </Router>
   );
 };
