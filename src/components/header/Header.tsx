@@ -10,7 +10,7 @@ import logo from "~/assets/logos/ball@1x.svg";
 
 const Header = () => {
   return (
-    <header>
+    <header id="header">
       <div className="header-in">
         {/* Branding */}
         <div className="brand">

@@ -1,6 +1,7 @@
 header {
   position: relative;
   top: 2rem;
+  transition: all 200ms ease;
 
   & .header-in {
     display: grid;
@@ -65,5 +66,21 @@ ul.nav-links {
         vertical-align: middle;
       }
     }
+  }
+}
+
+// ================================
+//  CSS when page is scrolled down
+// ================================
+
+body.scrolled header {
+  position: fixed;
+  @include pos($top: 0, $right: 0, $bottom: auto, $left: 0);
+  padding: 0.5rem;
+  background-color: $white;
+  box-shadow: 0 0.2rem 0.35rem 0 rgba($color: $black, $alpha: 0.25);
+
+  .brand {
+    @include box(auto, 64px);
   }
 }
