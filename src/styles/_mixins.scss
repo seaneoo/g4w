@@ -1,9 +1,16 @@
-@mixin border-radius($r) {
+@mixin pos($top: auto, $right: $top, $bottom: $top, $left: $right) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin border-radius($r: 0) {
   border-radius: $r;
   background-clip: padding-box;
 }
 
-@mixin box($w, $h: $w) {
+@mixin box($w: auto, $h: $w) {
   width: $w;
   height: $h;
 }
