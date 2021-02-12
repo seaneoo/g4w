@@ -4,6 +4,13 @@
   box-sizing: border-box;
 }
 
+html,
+body,
+#root {
+  margin: 0;
+  @include box(100%);
+}
+
 html {
   font-size: 75%;
 }
